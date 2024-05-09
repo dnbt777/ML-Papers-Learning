@@ -1,0 +1,41 @@
+
+Example of training data:
+Control Data Sample: bbdcbcbdcaccbaabcbddcccbadbcbdcbdbdddabadaccadadccbbabcbdaaabbddccccbabccabaaacbcbccabaaabcacadcbbbd
+Experimental Data Sample: b'\x1f\x8b\x08\x00[\x06=f\x02\xff-\x8c\xc7\x11\x00 \x00\xc2f\xa5\xec?\x83A\xfdp\x94\x1cv\xe3 J,\xcd6\xb3\xbd\xadK\xae\x88\xec\x08\x9b})\x01?6+\x02#\xed\xea[\xf3\x08n\xa0\x03z\xf1\xc7\x82d\x00\x00\x00'
+Compression ratio: 0.68
+
+Experimental Transformer Training:
+Epoch: 1, Loss: 8.711816787719727, Cumulative Time: 1.458s, ETA: 1456.571
+Epoch: 2, Loss: 7.902254581451416, Cumulative Time: 1.554s, ETA: 775.461
+Epoch: 3, Loss: 7.580946922302246, Cumulative Time: 2.055s, ETA: 682.989
+Epoch: 4, Loss: 7.4013190269470215, Cumulative Time: 2.600s, ETA: 647.486
+Epoch: 5, Loss: 7.269464015960693, Cumulative Time: 3.110s, ETA: 618.915
+Epoch: 6, Loss: 7.147188663482666, Cumulative Time: 3.634s, ETA: 602.017
+Epoch: 7, Loss: 7.000276565551758, Cumulative Time: 4.182s, ETA: 593.241
+Epoch: 8, Loss: 6.83085823059082, Cumulative Time: 4.697s, ETA: 582.469
+Epoch: 9, Loss: 6.64734411239624, Cumulative Time: 5.225s, ETA: 575.340
+Epoch: 10, Loss: 6.491089344024658, Cumulative Time: 5.730s, ETA: 567.277
+Epoch: 11, Loss: 6.348207950592041, Cumulative Time: 6.253s, ETA: 562.204
+Epoch: 12, Loss: 6.2269086837768555, Cumulative Time: 6.767s, ETA: 557.139
+Epoch: 13, Loss: 6.10776948928833, Cumulative Time: 7.295s, ETA: 553.875
+Epoch: 14, Loss: 6.006654262542725, Cumulative Time: 7.821s, ETA: 550.824
+Epoch: 15, Loss: 5.903111457824707, Cumulative Time: 8.371s, ETA: 549.703
+Epoch: 16, Loss: 5.807665824890137, Cumulative Time: 8.867s, ETA: 545.295
+Epoch: 17, Loss: 5.715604782104492, Cumulative Time: 9.395s, ETA: 543.247
+Epoch: 18, Loss: 5.626535892486572, Cumulative Time: 9.919s, ETA: 541.114
+Epoch: 19, Loss: 5.539201736450195, Cumulative Time: 10.452s, ETA: 539.635
+Epoch: 20, Loss: 5.449119567871094, Cumulative Time: 10.993s, ETA: 538.676
+Epoch: 21, Loss: 5.371146202087402, Cumulative Time: 11.512s, ETA: 536.686
+Epoch: 22, Loss: 5.294877529144287, Cumulative Time: 12.021s, ETA: 534.368
+Epoch: 23, Loss: 5.219783782958984, Cumulative Time: 12.545s, ETA: 532.888
+Epoch: 24, Loss: 5.14560079574585, Cumulative Time: 13.073s, ETA: 531.648
+Epoch: 25, Loss: 5.076024055480957, Cumulative Time: 13.597s, ETA: 530.293
+Epoch: 26, Loss: 5.01038122177124, Cumulative Time: 14.115s, ETA: 528.762
+Epoch: 27, Loss: 4.944467067718506, Cumulative Time: 14.650s, ETA: 527.942
+Epoch: 28, Loss: 4.877634048461914, Cumulative Time: 15.181s, ETA: 527.012
+Epoch: 29, Loss: 4.8154730796813965, Cumulative Time: 15.725s, ETA: 526.522
+Epoch: 30, Loss: 4.750726699829102, Cumulative Time: 16.261s, ETA: 525.766
+Epoch: 31, Loss: 4.693264961242676, Cumulative Time: 16.794s, ETA: 524.960
+Epoch: 32, Loss: 4.630314350128174, Cumulative Time: 17.320s, ETA: 523.931
+Epoch: 33, Loss: 4.57234525680542, Cumulative Time: 17.837s, ETA: 522.682
+Epoch: 34, Loss: 4.51467752456665, Cumulative Time: 18.376s, ETA: 522.108

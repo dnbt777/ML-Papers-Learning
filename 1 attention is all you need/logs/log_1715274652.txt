@@ -1,0 +1,15 @@
+
+Example of training data:
+Control Data Sample: bbdbcabaacbadcabdccabbadcaabaaabbccbddbaddcabdabdbcaacabbbccaccadaaaaabddbcbbbabaddddcadbaaabbdbbbbd
+Experimental Data Sample: b'\x1f\x8b\x08\x00\x9c\x03=f\x02\xff%\x8b\x81\r\x000\x08\xc2n\x05\xfa\xff\r\x03g\x8c!\xa5\xda8\xb2\x14\x8b\x06\xd2sq\xb011\x14\\\xa9\xb35\xa5\x85\xbah3%e\x9a8\x95\xffL\x99y\x9c\xd6\x97\x02d\x00\x00\x00'
+Compression ratio: 0.67
+Control Transformer Training:
+Epoch: 1, Loss: 8.697500228881836, Cumulative Time: 5.295s, ETA: 5289.493
+Epoch: 2, Loss: 4.893673896789551, Cumulative Time: 5.491s, ETA: 2739.902
+Epoch: 3, Loss: 3.539088726043701, Cumulative Time: 13.184s, ETA: 4381.381
+Epoch: 4, Loss: 2.9663286209106445, Cumulative Time: 21.116s, ETA: 5257.846
+Epoch: 5, Loss: 2.7033257484436035, Cumulative Time: 29.063s, ETA: 5783.563
+Epoch: 6, Loss: 2.5591444969177246, Cumulative Time: 36.820s, ETA: 6099.835
+Epoch: 7, Loss: 2.4705471992492676, Cumulative Time: 44.588s, ETA: 6325.155
+Epoch: 8, Loss: 2.404242992401123, Cumulative Time: 52.654s, ETA: 6529.058
+Epoch: 9, Loss: 2.3463892936706543, Cumulative Time: 60.515s, ETA: 6663.409

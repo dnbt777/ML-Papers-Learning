@@ -14,7 +14,7 @@ import time
 
 SEQLENGTH = 100
 EPOCHS = 1000
-SAMPLE_SIZE = 128
+SAMPLE_SIZE = 64
 data_generation_func = generate_rules_string
 compression_func = gzip_string
 
@@ -46,9 +46,12 @@ def compression_test():
     log("Compression ratio:", len(experimental_data[0]) / len(control_data[0]))
 
     log("Control Transformer Training:")
-    control_transformer, ctrl_losses, ctrl_times = train_transformer(control_data)
+    control_transformer, ctrl_losses, ctrl_times = train_transformer(control_data, padding=True)
     log("\nExperimental Transformer Training:")
-    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data)
+    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data, padding=True)
+    
+    
+    
     
 
     plot_results(ctrl_losses, ctrl_times, exp_losses, exp_times)
@@ -90,7 +93,6 @@ def train_transformer(data, padding=True):
     transformer.train()
     losses = []
     times = []
-    cumulative_time = 0
     start_time = time.time()
     for epoch in range(epochs):
         optimizer.zero_grad()
@@ -98,8 +100,7 @@ def train_transformer(data, padding=True):
         loss = criterion(output.contiguous().view(-1, tgt_vocab_size), tgt_data[:, 1:].contiguous().view(-1))
         loss.backward()
         optimizer.step()
-        end_time = time.time()
-        cumulative_time = end_time - start_time
+        cumulative_time = time.time() - start_time
         losses.append(loss.item())
         times.append(cumulative_time)
         estimated_time_remaining = ((cumulative_time / (epoch + 1)) * epochs - cumulative_time)
