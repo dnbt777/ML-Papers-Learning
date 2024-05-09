@@ -1,0 +1,13 @@
+chess evaluation function
+
+
+evaluate learning rate of transformers 
+treatment: trained on pre-compressed data
+control: trained on the exact same dataset
+method
+	1 make strings ("aabbaceydoas") with rules
+		"i before e except after c"
+		"three consonants may never touch"
+	2 make simple compression scheme
+		AWS type "a3b2aceydoas"
+	3 train a control and experiment transformer, graph learning progress

@@ -1,0 +1,46 @@
+For the first part of the transformer
+
+
+x = list of embeddings (vectors) of the input tokens // (i.e. "a b b" => [[0.2,...], [0.82,...],[0.82,...]])
+
+for i in range(N):
+    // attention phase
+    dx = do self-attention of the list of embeddings
+    x += dx
+    x = normalize(x) // (i.e. shift+shrink x so the avg is 0 and std 1, helps models work better)
+
+    // feed forward phase
+    dx = MLP(x)
+    x += dx
+    x = normalize(x)
+
+    //keep repeating for.. some arbitrary amnt of reps
+
+
+
+
+
+What is attention? V Q K
+En Em are embeddings for n and m
+Q 			is the context surrounding n
+K 			is m's role in that context / how it is relevant
+Q*K 		is how relevant m is to n (how much m 'attends' to n)
+V			the ways that m changes n, m is when relevant to n
+(Q*K)*V		the ways that m changes n (dx)
+
+
+
+
+
+
+
+
+
+
+
+unanswered Qs:
+what precisely is multi-head attention and is it different from normal self-attention
+what is "masked" multi head attention
+
+
+most important question: why does this work?
