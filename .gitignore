@@ -8,6 +8,7 @@ workspaces/*
 Include/
 Lib/
 Library/
+Library/*
 Project Management/
 Scripts/
 share/
