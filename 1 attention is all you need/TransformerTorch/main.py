@@ -91,6 +91,7 @@ def train_transformer(data, padding=True):
     losses = []
     times = []
     cumulative_time = 0
+    start_time = time.time()
     for epoch in range(epochs):
         start_time = time.time()
         optimizer.zero_grad()
@@ -99,8 +100,7 @@ def train_transformer(data, padding=True):
         loss.backward()
         optimizer.step()
         end_time = time.time()
-        elapsed_time = end_time - start_time
-        cumulative_time += elapsed_time
+        cumulative_time = end_time - start_time
         losses.append(loss.item())
         times.append(cumulative_time)
         estimated_time_remaining = ((cumulative_time / (epoch + 1)) * epochs - cumulative_time)
