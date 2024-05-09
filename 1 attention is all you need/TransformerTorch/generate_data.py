@@ -1,7 +1,7 @@
 import random
 
 
-def generate_string(charset, length=40):
+def generate_rules_string(charset, length=40):
     result = []
     i = 0
     while i < length:
@@ -58,5 +58,3 @@ def generate_string(charset, length=40):
 
     return ''.join(result)
 
-# Generate control data
-control_data = [generate_string("abcd", length=40) for _ in range(64)]

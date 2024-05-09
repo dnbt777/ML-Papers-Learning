@@ -1,0 +1,14 @@
+
+Example of training data:
+Control Data Sample: dccbcbccabbacabbcccbcacbaacbdbaabccabdcadbddcadbabdbaaddbbcccaddacbcbacccbdaaabbbdcbcbbdccbcacabbbbc
+Experimental Data Sample: b'\x1f\x8b\x08\x00u\xf9<f\x02\xff\x1d\x8c\x81\t\x00\x00\x08\xc2n\x9d\xfa\xff\r\x99D\x8bL\x8b\xad\x96\x91x\xf8w,\xda)w\x8a\x89225\x99\xb3\x93\x8f\xf3\xa9P\xb7\xea\xadP\xee\xcd\x0b\xf2\x01XJj\xd2d\x00\x00\x00'
+Compression ratio: 0.67
+
+Experimental Transformer Training:
+Epoch: 1, Loss: 5.734734058380127, Cumulative Time: 1.442s, ETA: 2.885
+Epoch: 2, Loss: 5.26996374130249, Cumulative Time: 1.541s, ETA: 0.771
+Epoch: 3, Loss: 5.15515661239624, Cumulative Time: 1.630s, ETA: 0.000
+Control Transformer Training:
+Epoch: 1, Loss: 6.245461940765381, Cumulative Time: 0.142s, ETA: 0.283
+Epoch: 2, Loss: 2.475367784500122, Cumulative Time: 0.259s, ETA: 0.130
+Epoch: 3, Loss: 1.7407969236373901, Cumulative Time: 0.335s, ETA: 0.000

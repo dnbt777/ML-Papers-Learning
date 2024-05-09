@@ -1,0 +1,7 @@
+
+Example of training data:
+Control Data Sample: cadcbadccabbaababcbacccbbddbdaabdccbadbbccbcababbaddcaccbddbaacbcacadacbbbababdbbbccabbccaabccccbbba
+Experimental Data Sample: b'\x1f\x8b\x08\x00<\xf7<f\x02\xff\x1d\x8c\x81\r\x000\x08\xc2n\xa5\xf0\xff\r\xab\x8bQ\x0254+n\x03\tA\xd7\x166f \x11\x83\xd2\xc3\x9a\xd5\x8f\xe3\xc9\x85\xcdT\x81\xe3#\xbf\xcac\xd5/"\x0f"\xcdW\x98d\x00\x00\x00'
+Compression ratio: 0.69
+
+Experimental Transformer Training:

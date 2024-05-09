@@ -1,0 +1,6 @@
+
+Example of training data:
+Control Data Sample: babbadadcaacabbcbbba
+Experimental Data Sample: baBadadcAcaBcb3a
+Compression ratio: 0.8
+Control Transformer Training:

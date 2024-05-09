@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from TransformerTorch.Transformer import Transformer
 from TransformerTorch.generate_data import *
+from TransformerTorch.compress_data import *
 import os
 import time
 import string
@@ -11,9 +12,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
-SEQLENGTH = 20
-EPOCHS = 500
-SAMPLE_SIZE = 64
+SEQLENGTH = 100
+EPOCHS = 1000
+SAMPLE_SIZE = 128
+data_generation_func = generate_rules_string
+compression_func = gzip_string
 
 
 
@@ -31,43 +34,27 @@ def compression_test():
     control_data = []
     samples = 0
     while samples < SAMPLE_SIZE:
-        datapoint = generate_string(charset, length=string_length)
+        datapoint = data_generation_func(charset, length=string_length)
         if len(datapoint) == SEQLENGTH:
             samples += 1
             control_data.append(datapoint)
-    experimental_data = [compress_string(s) for s in control_data]
+    experimental_data = [compression_func(s) for s in control_data]
 
     log("\nExample of training data:")
     log("Control Data Sample:", control_data[0])
     log("Experimental Data Sample:", experimental_data[0])
     log("Compression ratio:", len(experimental_data[0]) / len(control_data[0]))
 
+    log("\nExperimental Transformer Training:")
+    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data)
     log("Control Transformer Training:")
     control_transformer, ctrl_losses, ctrl_times = train_transformer(control_data)
-    log("\nExperimental Transformer Training:")
-    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data, padding=True)
+    
 
     plot_results(ctrl_losses, ctrl_times, exp_losses, exp_times)
 
 
-def compress_string(s):
-    compressed = ""
-    i = 0
-    while i < len(s):
-        count = 1
-        while i + 1 < len(s) and s[i] == s[i+1]:
-            i += 1
-            count += 1
-        if count == 1:
-            compressed += s[i]
-        elif count == 2:
-            compressed += s[i].upper()
-        else:
-            compressed += s[i] + str(count)
-        i += 1
-    return compressed
-
-def train_transformer(data, padding=False):
+def train_transformer(data, padding=True):
     src_vocab_size = 5000
     tgt_vocab_size = 5000
     d_model = 512
@@ -84,11 +71,20 @@ def train_transformer(data, padding=False):
 
     if padding:
         max_length = max(len(s) for s in data)
-        data = [s.ljust(max_length, ' ') for s in data]
-    src_data = torch.tensor([list(map(ord, s)) for s in data]).to(device)
-    tgt_data = torch.tensor([list(map(ord, s)) for s in data]).to(device)
+        if isinstance(data[0], bytes):
+            data = [s + b'\0' * (max_length - len(s)) for s in data]  # Padding with null byte for bytes
+        else:
+            data = [s.ljust(max_length, '\0') for s in data]  # Padding with null char for strings
 
-    criterion = nn.CrossEntropyLoss(ignore_index=0)
+    # Convert data to integer tensors
+    if isinstance(data[0], bytes):
+        src_data = torch.tensor([list(s) for s in data], dtype=torch.long).to(device)
+        tgt_data = torch.tensor([list(s) for s in data], dtype=torch.long).to(device)
+    else:
+        src_data = torch.tensor([list(map(ord, s)) for s in data], dtype=torch.long).to(device)
+        tgt_data = torch.tensor([list(map(ord, s)) for s in data], dtype=torch.long).to(device)
+
+    criterion = nn.CrossEntropyLoss(ignore_index=0)  # Assuming 0 is the padding index
     optimizer = optim.Adam(transformer.parameters(), lr=0.0001, betas=(0.9, 0.98), eps=1e-9)
 
     transformer.train()

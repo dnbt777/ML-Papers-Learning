@@ -1,0 +1,8 @@
+
+Example of training data:
+Control Data Sample: cbbccccccabbaccaacbd
+Experimental Data Sample: cBc6aBaCAcbd
+Compression ratio: 0.6
+Control Transformer Training:
+Epoch: 1, Loss: 8.64179801940918, Cumulative Time: 29.937s, ETA: 299337.718
+Epoch: 2, Loss: 4.962655544281006, Cumulative Time: 30.047s, ETA: 150203.774
