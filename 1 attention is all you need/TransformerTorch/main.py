@@ -45,10 +45,10 @@ def compression_test():
     log("Experimental Data Sample:", experimental_data[0])
     log("Compression ratio:", len(experimental_data[0]) / len(control_data[0]))
 
-    log("\nExperimental Transformer Training:")
-    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data)
     log("Control Transformer Training:")
     control_transformer, ctrl_losses, ctrl_times = train_transformer(control_data)
+    log("\nExperimental Transformer Training:")
+    experimental_transformer, exp_losses, exp_times = train_transformer(experimental_data)
     
 
     plot_results(ctrl_losses, ctrl_times, exp_losses, exp_times)
@@ -93,7 +93,6 @@ def train_transformer(data, padding=True):
     cumulative_time = 0
     start_time = time.time()
     for epoch in range(epochs):
-        start_time = time.time()
         optimizer.zero_grad()
         output = transformer(src_data, tgt_data[:, :-1])
         loss = criterion(output.contiguous().view(-1, tgt_vocab_size), tgt_data[:, 1:].contiguous().view(-1))
