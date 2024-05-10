@@ -12,9 +12,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
+
 SEQLENGTH = 100
 EPOCHS = 1000
 SAMPLE_SIZE = 64
+SRC_VOCAB_SIZE = 5000
+TGT_VOCAB_SIZE = 5000
+
+
+
 data_generation_func = generate_rules_string
 compression_func = gzip_string
 
@@ -58,8 +64,8 @@ def compression_test():
 
 
 def train_transformer(data, padding=True):
-    src_vocab_size = 5000
-    tgt_vocab_size = 5000
+    src_vocab_size = SRC_VOCAB_SIZE
+    tgt_vocab_size = TGT_VOCAB_SIZE
     d_model = 512
     num_heads = 8
     num_layers = 6

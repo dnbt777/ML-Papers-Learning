@@ -11,3 +11,23 @@ method
 	2 make simple compression scheme
 		AWS type "a3b2aceydoas"
 	3 train a control and experiment transformer, graph learning progress
+
+
+
+
+compression transformer
+make a transformer to compress the data, and uncompress it
+then train another transformer on this data
+
+
+
+idea
+compress data via a tree
+binary compression?
+input = data
+output = sequence through flowchart (train model to compress this as best as possible)
+lossless and completely reversible
+
+
+
+continuous transformer - like continuous markov chain
