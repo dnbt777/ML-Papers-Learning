@@ -1,8 +1,14 @@
 # ML Paper List
 goal is to get my bearings in ML
 
-## Research Report by Globe Explorer
-**Website:** [explorer.globe.engineer](http://explorer.globe.engineer)
+paper "completed" date is whenever I have met the following criteria
+- have a mental model solid enough to allow me to implement the paper from scratch in under 30mins
+- write a useful explanation in under 200 words
+	
+paper mastery is whenever I have met the following criteria
+- have a mental model solid enough to allow me to implement the paper from scratch in under 10mins
+- write a useful explanation in under 15 words
+
 
 ---
 
@@ -50,8 +56,37 @@ goal is to get my bearings in ML
 
 ---
 
+# Paper notes
 
-## Fundamentals to compress
-### From attn is all you need
-Vanishing gradient problem
+## Attention is all you need (start-end: 4/?? - ???)
+Goal: be able to write a transformer from scratch as fast as possible
+inference and train
+
+speedrun up to this point then work on understnaing
+
+
+### Basic overview
+
+### Fundamentals to compress
+Vanishing gradient problem and residuals
+	- f(input) = combination(input, change) (i.e. the transformed state of the input) is more complex to calculate than g(input) = change
+	- therefore networks more efficiently train to calculate g
+	- therefore if you need f(input), just set you model up to calculate g, then manually do f(input) = combination(input, g(input)
 backpropagation and gradient of the loss
+	- loss gradient is the multidimensional direction that the loss goes in
+cross entropy loss
+	- Dot({output probabilities}{correct 'probabilities' - in this case, a vector of all embeddings with 1 for the target token and 0 for all other tokens})
+	- Essentially asks the question: how accurate is your model's predicted probability distribution to the real target distribution from the training data?
+
+
+
+## General ML notes
+Divergence
+	- the difference between probability distributions (example KL divergence)
+Adam
+	- A type of optimizer
+Matrix multiplication
+	- a @ b
+	- each vector of b is transformed one at a time, feeding into paper-shredder a
+Chain rule for backprop
+	- Tracks a "chain" of changes between variables

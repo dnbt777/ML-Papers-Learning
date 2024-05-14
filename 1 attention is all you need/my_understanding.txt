@@ -44,3 +44,13 @@ what is "masked" multi head attention
 
 
 most important question: why does this work?
+
+
+
+
+to make:
+run 100 transformers. they learn - but what is the learning rate? could be 0.01. could be 0.1. etc. but, what if, instead, it was a matrix of weights, W_L, that gets applied to the loss gradient?
+so, run 100 transformers, with randomized weights for W_L. they will calculate their losses, which will be matmul'd with W_L, and then this combination will be used to shift the weights of the transformer.
+    (As opposed to, for example, the )
+The top 10 transformers will pass on their "genes" of learning.
+The transformers will learn how to learn the dataset.

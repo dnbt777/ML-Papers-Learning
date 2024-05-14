@@ -52,6 +52,7 @@ class Transformer():
 
 
     def feed_forward(self, embeddings):
+        pass
     #     method: feed_forward(self, embeddings)
 #         feed embeddings through MLP
 #         residue stuff and normalize
